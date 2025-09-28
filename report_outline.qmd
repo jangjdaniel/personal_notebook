@@ -92,6 +92,8 @@ ggplot(data = mtcars, aes(x = mpg)) +
 Maybe we want to understand how different *cyl* values affect mpg? The point of this graph is to show that things begin to get smushed when figures get too large. When this happens, there are ways to enlarge the figures (google this), but too much information is not useful when it's hard to understand what's going on. Additionally, to create more of these types of visualizations, you will have to remember how to pivot your data
 
 ```{r}
+#| label: fig-1-first-table
+#| fig.cap: "This is how you add a caption to your figure"
 ggplot(data = mtcars, aes(x = mpg)) +
   geom_histogram() +
   facet_wrap(~ vs) + 
@@ -106,9 +108,13 @@ A very important part of EDA, especially for a project like advancement, is unde
 
 I like using the *gtsummary* package, which makes nice *gt* tables automatically for you. Note that the reason why I type *dplyr::select* for example is that it specifies which package the select function I'm running should come out of. 
 
-The gtsummary package is extremely powerful, as it can create tables for all types of regression outputs, these summary tables, and even saving these tables as png's to put in a presentation. For more information, visit: https://www.danieldsjoberg.com/gtsummary/ (MSK represent)
+The gtsummary package is extremely powerful, as it can create tables for all types of regression outputs, these summary tables, and even saving these tables as png's to put in a presentation. For more information, visit: https://www.danieldsjoberg.com/gtsummary/ (MSK represent). 
+
+As an aside, the formatting of these reports gets really messy. It's honestly fine as long as you quote your tables, such as @tbl-1-first-table and @fig-1-first-table
 
 ```{r}
+#| label: tbl-1-first-table
+#| tbl-cap: "This is how you add a caption to your table."
 #| echo: true
 library(gtsummary)
 
@@ -121,15 +127,15 @@ Of course the type of EDA can become much more complicated. Maybe we have a 5x5 
 
 *how do i add "figure 1, and the description... I did it for 495*
 
-# Thinking about Analysis
+# Thinking about Analysis and Revising
 
-Now that we understand our variables, we move onto how we formulate a question and how we answer it.
+Now that we understand our variables, we move onto how we formulate a question and how we answer it. I will spill out some tips for you
 
+- A more complicated analysis is not always necessary unless you realize you have limitations in the methods you're currently using.
 
+- When you identify a new method, make sure you do the work to ensure it's appropriate for the data. It doesn't have to be perfect (no model/analysis ever is), but it should meet the conditions so everything can be interpreted.
 
-# Working through Everything
-
-As you go through your code, 
+- Document your process in a separate document so you don't mess up the master document. When you're ready to add something, copy-paste it.
 
 # Conclusion
 
