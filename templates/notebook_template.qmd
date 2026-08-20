@@ -1,0 +1,48 @@
+---
+title: "MONTH Project Notebook"
+author: Daniel Jang
+format: 
+  pdf: 
+    embed-resources: true
+    toc: true
+    toc-depth: 3 
+execute:
+  echo: false
+  warning: false
+  error: false
+  message: false
+editor: source
+---
+
+At the beginning of each research day, I will refer to this document to establish my daily goals. These goals will be derived from my weekly research goals established by me and my advisors. At the end of each research day, I will go over my progress and/or setbacks.
+
+For each week, I will write the big picture ideas from my advising meeting, as well as the goals we set up to accomplish for the next meeting. 
+
+\newpage
+
+# Week of MONTH XX
+
+## Previous week reflection
+
+I misunderstood the distinction from MCAR and MAR data. MCAR data does not affect your point estimate in most scenarios. We care about the MAR case because when missingness is influenced by features that we did record, not adjusting for it will most likely bias our estimates. Rubin's rules for variance keep the uncertainty with missing data while we adjust our point estimates. 
+
+However, a good thing is I finally learned the notation for expectation with probability measure. It is $\mathbb{E}(X) = \int_\Omega X \, d\mathbb{P}$
+
+::: {.callout-note}
+Weekly Goal: Learn the basics of semiparametric theory (goals, notation)
+:::
+
+## Tasks for the week 
+
+- [X] Learn what an influence function is
+- [ ] MNAR Data
+- [ ] Replicate DGM from Ke et al
+
+  ### Monday Reflection
+  - **Positives:** Learned what an influence function is
+  - **Setbacks:** I couldn't get the DGM to work properly
+  - **In Progress:** Getting used to functionals and methods for MNAR data
+
+
+
+

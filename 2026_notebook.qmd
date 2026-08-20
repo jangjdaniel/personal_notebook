@@ -1,0 +1,39 @@
+---
+title: "2026 Notebook"
+author: Daniel Jang
+format: 
+  pdf: 
+    embed-resources: true
+    toc: true
+    toc-depth: 3 
+execute:
+  echo: true
+  warning: false
+  error: false
+  message: false
+editor: source
+---
+
+The purpose of this yearly notebook is to document large scale progress in projects, any significant mistakes, important derivations, nice tricks that I think will serve me into the future, etc. 
+
+\newpage
+
+# September
+
+## 14th
+
+I learned about the `genzplyr` package that makes my code bussin no cap. 
+
+```{r}
+#| eval: false
+# Example code because my 24 year old friend told me life stops at 23
+data |>
+  genzplyr::yeet(age < 23)
+```
+
+
+I also solved the riemann hypothesis but it doesn't fit in the margins. 
+
+## 26th 
+
+I unfortunately learned that `5039932` is an even number, so I will be going into the book of the world's biggest fools. I will not let this be a setback.

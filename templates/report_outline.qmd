@@ -1,8 +1,8 @@
 ---
 title: "Template and Tutorial for an Analysis"
-author: Insert Names Here
-date: "`r format(Sys.time(), '%B %d, %Y')`"
-date-format: iso
+author: Daniel Jang, (Insert more names)
+date: today
+date-format: "MMMM DD, YYYY"
 format: 
   pdf: 
     embed-resources: true
@@ -15,6 +15,8 @@ execute:
   message: false
 editor: source
 ---
+
+\newpage
 
 # Introduction
 
@@ -67,7 +69,7 @@ Notice that I just created a subheading. The more #'s you put, the more sub it g
 
 If you want to use LaTeX, you can do so directly in R like so (as a bonus, it shows up in Rstudio)
 
-$$\oint_V f(s) \,ds$$
+$$\mathbb{E}(X) = \int_\Omega X \, d\mathbb{P}$$
 
 # Exploratory Data Analysis
 

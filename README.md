@@ -16,7 +16,7 @@ This is my meta-notebook, which contains information on current projects I am wo
 
 ## 🛠️ Environment & Toolstack
 * **Language:** R (v4.4+)
-* **Primary Libraries:** `tidyverse`, `ggplot2`
+* **Primary Libraries:** `tidyverse`, `ggplot2`, `gt`
 * **Render Pipeline:** Compiled locally
 
 ---
