@@ -2,6 +2,8 @@
 
 This is my meta-notebook, which contains information on current projects I am working on, any big picture items from aforementioned projects (such as simulations, proofs, and mistakes), and some miscellaneous documents (such as coding tutorials, teaching slides, and templates). Week-to-week items (such as meeting slides,  granular information on a given project, and manuscripts) lives in their individual GitHub repositories. This is subject to change as I adapt to this system.
 
+I will also add all relevant posters and presentations of my research (outside of the classroom) as well as my CV. 
+
 ---
 
 ## 🗺️ Project Directory & Code Ecosystem
