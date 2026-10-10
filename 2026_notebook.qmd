@@ -20,20 +20,6 @@ The purpose of this yearly notebook is to document large scale progress in proje
 
 # September
 
-## 14th
+## New Methods
 
-I learned about the `genzplyr` package that makes my code bussin no cap. 
-
-```{r}
-#| eval: false
-# Example code because my 24 year old friend told me life stops at 23
-data |>
-  genzplyr::yeet(age < 23)
-```
-
-
-I also solved the riemann hypothesis but it doesn't fit in the margins. 
-
-## 26th 
-
-I unfortunately learned that `5039932` is an even number, so I will be going into the book of the world's biggest fools. I will not let this be a setback.
+## Mistakes I made

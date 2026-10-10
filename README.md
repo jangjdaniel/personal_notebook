@@ -10,9 +10,9 @@ I will also add all relevant posters and presentations of my research (outside o
 
 | Project Name | Repository Link | Statistical Methodology | Status |
 | :--- | :--- | :--- | :--- |
-| **Rotation #1** | [`repo-link`](#) | Nonmonotone Missing Data | 🟡 On Hold |
-| **QSURE NMB** | [`repo-link`](#) | Noncollapsible GLMs and Measurement Error | 🟡 On Hold |
-| **OARS** | [`repo-link`](#) | Weighted GEEs and Penalized Regression | 🟡 On Hold |
+| **Rotation #1** | [`repo-link`](https://github.com/jangjdaniel/research_rotation_1) | Nonmonotone Missing Data | Active |
+| **QSURE NMB**   | [`repo-link`](https://github.com/jangjdaniel/QSURE_2025)          | Noncollapsible GLMs and Measurement Error | Active |
+| **OARS**        | [`repo-link`](https://github.com/jangjdaniel/OARS)                | Weighted GEEs and Penalized Regression | 🟡 On Hold |
 
 ---
 
