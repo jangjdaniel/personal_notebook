@@ -22,4 +22,45 @@ The purpose of this yearly notebook is to document large scale progress in proje
 
 ## New Methods
 
+M-estimation, Z-estimation, sandwich variance
+
+Influence Functions, Efficient Influnece Functions, connections between IF/EIF and estimating functions
+
 ## Mistakes I made
+
+
+
+# October
+
+## Debiased Machine Learning (BIP Project)
+
+Debiased / Double Machine Learning (DML) is a semiparametric estimation method that came out of the economics literature that allows us to obtain an unbiased and efficient estimate for a low-dimensional target parameter $\psi$ (perhaps to do statistical inference) while accounting for high-dimensional nuisance parameters $\eta$. However, they have become useful in biostatistics. Example: Jinbo paper.
+
+\textbf{Q1}. What is the simplest framework that we are familiar with: Partial Linear Regression (generalized additive model type thing?) and a connection to the Frisch-Waugh-Lovell theorem we know from linear models.
+
+$$
+Y \sim X + \boldsymbol{f}(\boldsymbol{V})
+$$
+
+This function is infinite-dimensional (a thought exercise and an informal proof in linear algebra).
+
+\textbf{Q2}. How do we estimate this infinite-dimensional nuisance with the data? Machine Learning!
+
+The double part of this method is that we use two separate machine learning models for the partial Y and partial X (notated as D in these papers)
+
+\textbf{Thought: What might go wrong with just fitting a machine learning model on this equation?}
+
+\textbf{Q3}. Machine learning methods are a black box... how do we confirm we obtain an unbiased estimate of our target parameter(s)?: Neyman Orthogonality. There is some detail that I don't know if I can go into in time...
+
+
+Some references:
+
+1) The canonical paper: Double/Debiased Machine Learning for Treatment
+and Structural Parameters1
+Victor Chernozhukov†, Denis Chetverikov‡, Mert Demirer†
+Esther Duflo†, Christian Hansen§, Whitney Newey†, James Robins
+2) A simpler introduction: https://arxiv.org/abs/2504.08324
+
+
+
+I will motivate it using RCT data: https://bingkaiwang.github.io/RCT_Bench-main/website/. Unless I am using a noncollapsible model, adjusting for all covariates as my nuisance and using penalized machine learning should still help in semiparametric efficiency gains compared to non-adjustment or simple adjustment (not entirely convinced by that last point)
