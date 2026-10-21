@@ -34,23 +34,32 @@ Influence Functions, Efficient Influnece Functions, connections between IF/EIF a
 
 ## Debiased Machine Learning (BIP Project)
 
-Debiased / Double Machine Learning (DML) is a semiparametric estimation method that came out of the economics literature that allows us to obtain an unbiased and efficient estimate for a low-dimensional target parameter $\psi$ (perhaps to do statistical inference) while accounting for high-dimensional nuisance parameters $\eta$. However, they have become useful in biostatistics. Example: Jinbo paper.
+Debiased / Double Machine Learning (DML) is a semiparametric estimation method that came out of the economics literature that allows us to obtain an unbiased and efficient estimate for a low-dimensional target parameter $\psi$ (perhaps to do statistical inference) while accounting for high-dimensional nuisance parameters $\eta$. However, they have become useful in biostatistics. We need to look no further than one of the papers that Jinbo made us present. I will try to give a high level explaination of the concept, since the theory behind why this works is beyond my understanding for now.
 
-\textbf{Q1}. What is the simplest framework that we are familiar with: Partial Linear Regression (generalized additive model type thing?) and a connection to the Frisch-Waugh-Lovell theorem we know from linear models.
+I will restrict our discussion on DML to partially linear regression models, since it will connect nicely to concepts we learned this semester. Let $A$ be a binary treatment whose effect we are interested in, let $Y$ be our continuous outcome (we can extend this beyond continuous outcomes), and let $\boldsymbol{Z} = (Z_1, \dots Z_p)$ be a $p$-dimensional vector of covariates that are not of primary scientific interest. Finally, let $f: Z \to \mathbb{R}$ \textcolor{red}{I think? Might be wrong}, where $f \in L_2$. This is to guarantee finite second moments, which then implies finite variance \textcolor{red}{Need more detail here probably... as a detail, $L_2$ is infinite dimensional... an informal linear algebra proof involving polynomials}
+
+The partially linear regression model is given as:
 
 $$
-Y \sim X + \boldsymbol{f}(\boldsymbol{V})
+Y_i = \beta_0 + \beta_A A_i + \boldsymbol{f}(\boldsymbol{Z}) + \varepsilon
 $$
 
-This function is infinite-dimensional (a thought exercise and an informal proof in linear algebra).
+Recall the \textbf{Frisch-Waugh-lovell Theorem}: For a linear regression model $\mathbb{E}(Y \mid X) = \beta_0 + \boxed{\beta_k} X_K + X^\top_{-k}\beta_{-k} +...$, where $X_{-k}$ denotes all predictors other than $X_k$,
 
-\textbf{Q2}. How do we estimate this infinite-dimensional nuisance with the data? Machine Learning!
+$$
+Y^* = \boxed{\beta_k} X^*_k + \varepsilon^*
+$$
 
-The double part of this method is that we use two separate machine learning models for the partial Y and partial X (notated as D in these papers)
+where $Y^* = Y - \hat{\mathbb{E}}(Y \mid X_{-k})$ is the outcome model, $X^*_k = X_k - \hat{\mathbb{E}}(X_k \mid X_{-k})$ is the \textcolor{red}{variable model}, and $\varepsilon^*$ is proportional to the residual-maker matrix for the remaining predictors (details are not important for the error term).
 
-\textbf{Thought: What might go wrong with just fitting a machine learning model on this equation?}
+\textbf{We can use the same theorem to find the residuals for the outcome and the variable of interest in the partially linear regression model}. It is clear with a partially linear regression model that the outcome model is $Y_{resid} = Y - \hat{\mathbb{E}}[Y \mid f(Z)]$ and the treatment model is $A_{resid} = A - \hat{\mathbb{E}}[A \mid f(Z)]$ (oftentimes, $A$ is denoted as $D$ in the literature). This is where the name *double* comes from, not from this method being automatically doubly robust. 
 
-\textbf{Q3}. Machine learning methods are a black box... how do we confirm we obtain an unbiased estimate of our target parameter(s)?: Neyman Orthogonality. There is some detail that I don't know if I can go into in time...
+Now the daunting question: How do we estimate obtain $\hat{\mathbb{E}}[Y \mid f(Z)]$ and $\hat{\mathbb{E}}[A \mid f(Z)]$? Well, we use the other part of the method's name: *machine learning* to find the $\hat{f}$ that works.  \textcolor{red}{I definitely do not have all the details down yet. I am pretty confident the functional forms here will be different}
+
+\textbf{Thought: What might go wrong with just fitting a machine learning model on the original partially linear regression model? I think it has to do with the functional form of $f$ being the same, the doubleness is not present here}
+
+
+This is all great, but machine learning models are a black box. How do we confirm we obtained an unbiased estimate of our target parameter(s)?: \textbf{Neyman Orthogonality}. There is some detail that I don't know if I can go into in time, but trust that the literature has shown asymptotic properties hold
 
 
 Some references:
